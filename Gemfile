@@ -14,7 +14,7 @@ gem 'jquery-rails'
 # Dot Env
 gem 'dotenv-rails', groups: [:development, :test]
 # Login
-gem 'omniauth'
+gem 'omniauth', '~> 1.9.1'
 gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

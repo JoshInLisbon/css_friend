@@ -17,7 +17,13 @@ module CssFriend
     # the framework and any gems in your application.
     config.middleware.use OmniAuth::Builder do
       provider :developer if Rails.env.development?
-      provider :github, ENV['CLIENTID'], ENV['CLIENTSECRET']
+      provider :github, ENV['CLIENTID'], ENV['CLIENTSECRET'],
+        {
+          :auth_token_params => {
+            :mode => :header,
+            :header_format => 'token %s',
+          }
+        }
     end
   end
 end
